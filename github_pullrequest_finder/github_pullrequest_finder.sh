@@ -30,7 +30,7 @@ gh search prs --assignee "@me"  --reviewed-by "@me" --state open --json reposito
     SHORT_DATE=$(echo $UPDATED | cut -d'T' -f1)
 
     # Print the formatted row
-    printf "%-25.25s %-7s %b %s\n" "$REPO" "#$NUMBER" "$STATUS_TAG" "$TITLE"
+    printf "%s \t %s %b %s\n" "$REPO" "#$NUMBER" "$STATUS_TAG" "$TITLE"
     echo "  ${GRAY}└─ Updated: $SHORT_DATE | gh pr checkout $NUMBER -R $REPO${NC}"
 done
 

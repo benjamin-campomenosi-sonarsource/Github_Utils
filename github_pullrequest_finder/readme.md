@@ -4,15 +4,15 @@ A simple bash script to quickly view all open Pull Requests where you are either
 
 ## Prerequisites
 
-- [GitHub CLI (`gh`)](https://cli.github.com/) must be installed and authenticated
-  
-  ```bash
-  # Install on macOS
-  brew install gh
-  
-  # Authenticate
-  gh auth login
-  ```
+[GitHub CLI (`gh`)](https://cli.github.com/) must be installed and authenticated
+
+ ```bash
+ # Install on macOS
+ brew install gh
+
+ # Authenticate
+ gh auth login
+ ```
 
 ## Usage
 
@@ -23,6 +23,44 @@ chmod +x github_pullrequest_finder.sh
 # Run the script
 ./github_pullrequest_finder.sh
 ```
+
+## Add as a Shortcut (Optional)
+
+You can make `github_pullrequest_finder.sh` available everywhere from your terminal by adding it to your `PATH` or creating an alias in your shell configuration.
+
+### Option 1: Add to PATH
+
+Move or symlink the script into a directory that's already in your `PATH` (e.g., `/usr/local/bin`):
+
+```bash
+# From inside the repo:
+chmod +x github_pullrequest_finder.sh
+sudo ln -s "$(pwd)/github_pullrequest_finder.sh" /usr/local/bin/github_pullrequest_finder
+```
+
+Now you can just run:
+```bash
+github_pullrequest_finder
+```
+from anywhere.
+
+### Option 2: Add an Alias
+
+Add this line to your `~/.zshrc`, `~/.bashrc`, or `~/.bash_profile`:
+
+```bash
+alias git_pr_finder="sh /path/to/github_pullrequest_finder/github_pullrequest_finder.sh"
+```
+
+Replace `/path/to/github_pullrequest_finder/` with the actual path where you cloned this repository.
+
+After saving, run `source ~/.zshrc` (or your respective shell config) to apply changes. Now you can use:
+
+```bash
+git_pr_finder
+```
+from any terminal window to instantly see your open PRs.
+
 
 ## Output
 
